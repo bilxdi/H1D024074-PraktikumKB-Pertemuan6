@@ -96,4 +96,4 @@ class Perceptron:
                     # Menuliskan bobot terakhir
                     f.write(f"\nBobot akhir :{self.w_[1:]}\n")
                     f.write(f"Bias akhir :{self.w_[0]}")
-                break
+                    break
