@@ -16,6 +16,14 @@ class Backpropagation:
 
         self.w_hidden = np.random.rand(self.n_input, self.n_hidden)
         self.b_hidden = np.random.rand(1, self.n_hidden)
-        
+
         self.w_output = np.random.rand(self.n_hidden, self.n_output)
         self.b_output = np.random.rand(1, self.n_output)
+
+        # Fungsi menerapkan fungsi aktivasi sigmoid bipolar atau tanh
+        def bi_sigmoid(self, x):
+            return np.tanh(x)
+        
+        # Fungsi menerapkan turunan fungsi aktivasi sigmoid bipolar atau tanh (asumsi x = output sigmoid bipolar/tanh)
+        def deriv_bi_sigmoid(self, x):
+            return 1 - x**2
