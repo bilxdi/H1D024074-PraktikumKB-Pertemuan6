@@ -27,3 +27,17 @@ class Backpropagation:
         # Fungsi menerapkan turunan fungsi aktivasi sigmoid bipolar atau tanh (asumsi x = output sigmoid bipolar/tanh)
         def deriv_bi_sigmoid(self, x):
             return 1 - x**2
+
+        # Fungsi membuat simulasi perbaikan bobot dan bias
+        def plot_error(self, x, epoch):
+            plt.plot(range(1, epoch + 1), x, linestyle='-', color='b', label='Error')
+
+            final_error = x[-1]
+            plt.annotate(f'Epoch {epoch}, Error: {final_error:.4f}', xy=(epoch, final_error), xytext=(epoch - len(x) * 0.2, final_error + 0.05), arrowprops=dict(facecolor='black', arrowstyle="->"), fontsize=10, color='red')
+            
+            plt.title('Perbaikan Error Setiap Epoch')
+            plt.xlabel('Epoch')
+            plt.ylabel('Sum Square Error(SSE)')
+            plt.grid(True)
+            plt.legend()
+            plt.show()
